@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KKB Juice Stall</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fffaf5;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff3d71;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff3d71;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ff3d71;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff3d71;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #e91e5b;
+        }
+
+        .location-btn {
+            background: #198754;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 7%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .title span {
+            color: #ff3d71;
+        }
+
+        /* MENU */
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .item {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.12);
+            transition: .3s;
+        }
+
+        .item:hover {
+            transform: translateY(-7px);
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 18px;
+        }
+
+        .item-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #ff3d71;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .order-btn {
+            display: block;
+            text-align: center;
+            background: #25D366;
+            color: white;
+            padding: 11px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* OFFER */
+        .offer {
+            background: linear-gradient(135deg, #ff3d71, #ff7a45);
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+            padding: 50px 20px;
+        }
+
+        .offer h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .offer p {
+            font-size: 20px;
+        }
+
+        /* ABOUT */
+        .about {
+            text-align: center;
+            background: white;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* LOCATION */
+        .location {
+            text-align: center;
+        }
+
+        .map {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            margin: 25px auto;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #ff3d71;
+        }
+
+        /* MOBILE */
+        @media(max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .title {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">
+        KKB <span>Juice Stall</span>
+    </div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#location">Location</a>
+    </div>
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div>
+        <h1>Fresh <span>&</span> Juicy</h1>
+
+        <p>
+            Welcome to <b>KKB Juice Stall</b><br>
+            Fresh Fruits • Fresh Juices • Fresh Taste
+        </p>
+
+        <a href="#menu" class="btn">
+            🍹 View Menu
+        </a>
+
+        <a href="#location" class="btn location-btn">
+            📍 Find Us
+        </a>
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+<section id="menu">
+
+    <h2 class="title">
+        Our <span>Menu</span>
+    </h2>
+
+    <div class="menu">
+
+
+        <!-- APPLE -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍎 Apple</h3>
+
+                <div class="price">₹70</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Apple%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANGO -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🥭 Mango</h3>
+
+                <div class="price">₹60</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Mango%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRAPES -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1599819177626-cbb6e9f9f1b7?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍇 Grapes</h3>
+
+                <div class="price">₹50</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Grape%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WATERMELON -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1563114773-84221bd62daa?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍉 Watermelon</h3>
+
+                <div class="price">₹40</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Watermelon%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PINEAPPLE -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍍 Pineapple</h3>
+
+                <div class="price">₹40</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Pineapple%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- STRAWBERRY -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍓 Strawberry</h3>
+
+                <div class="price">₹80</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Strawberry%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- KIWI -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1585059895524-72359e06133a?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🥝 Kiwi</h3>
+
+                <div class="price">₹80</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Kiwi%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- POMEGRANATE -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1541344999736-83eca272f6fc?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3> Pomegranate</h3>
+
+                <div class="price">₹60</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Pomegranate%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LEMON -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1590502593747-42a996133562?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍋 Lemon</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Lemon%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LEMON MINT -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🌿 Lemon Mint</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Lemon%20Mint">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOSAMBI -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3> Mosambi</h3>
+
+                <div class="price">₹60</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Mosambi%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORANGE -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍊 Orange</h3>
+
+                <div class="price">₹60</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Orange%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BANANA -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍌 Banana</h3>
+
+                <div class="price">₹40</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Banana%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BADAM -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🥛 Badam Milk</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Badam%20Milk">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PISTA -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🥛 Pista Milk</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Pista%20Milk">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROSE MILK -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🌹 Rose Milk</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Rose%20Milk">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FRUIT SALAD -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🍓 Fruit Salad</h3>
+
+                <div class="price">₹40</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Fruit%20Salad">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BEETROOT -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🩷 Beetroot</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Beetroot%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARROT -->
+        <div class="item">
+
+            <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=800&q=80">
+
+            <div class="item-content">
+
+                <h3>🥕 Carrot</h3>
+
+                <div class="price">₹30</div>
+
+                <a class="order-btn"
+                   href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20Carrot%20Juice">
+                    WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFER -->
+<section>
+
+    <div class="offer">
+
+        <h2>🔥 Special Offer</h2>
+
+        <p>
+            Fresh Juice • Great Taste • Best Price
+        </p>
+
+        <br>
+
+        <a class="btn"
+           href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20to%20know%20today's%20offers">
+            💬 Ask Offer on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <h2 class="title">
+        About <span>KKB Juice Stall</span>
+    </h2>
+
+    <p>
+        Welcome to KKB Juice Stall!
+        We serve fresh and delicious fruit juices,
+        milk drinks and fruit salads.
+        Our goal is simple — fresh ingredients,
+        refreshing taste and happy customers. ❤️
+    </p>
+
+</section>
+
+
+<!-- LOCATION -->
+<section class="location" id="location">
+
+    <h2 class="title">
+        Find <span>Us</span> 📍
+    </h2>
+
+    <p>
+        Visit KKB Juice Stall and enjoy your favourite fresh juice!
+    </p>
+
+    <br>
+
+    <!-- CHANGE THIS GOOGLE MAPS LINK -->
+    <a class="btn location-btn"
+       href="https://maps.google.com/"
+       target="_blank">
+
+        📍 Open Google Maps
+
+    </a>
+
+    <!-- Optional map -->
+    <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb="
+        loading="lazy">
+    </iframe>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>KKB <span>Juice Stall</span> 🥤</h3>
+
+    <br>
+
+    <p>Freshness in Every Sip ❤️</p>
+
+    <br>
+
+    <p>© 2026 KKB Juice Stall. All Rights Reserved.</p>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hello%20KKB%20Juice%20Stall,%20I%20want%20to%20place%20an%20order"
+   target="_blank"
+   style="
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        background:#25D366;
+        color:white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:28px;
+        text-decoration:none;
+        box-shadow:0 4px 15px rgba(0,0,0,.3);
+        z-index:9999;
+   ">
+    💬
+</a>
+
+</body>
+</html>
